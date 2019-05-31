@@ -1,0 +1,128 @@
+<mat-toolbar color="primary">
+	Angular Material 2 App
+</mat-toolbar>
+
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab label="First">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      First
+    </ng-template>
+    <form>
+      <h2>UCLES - Centre Invoice Payment Form</h2>
+      <div>
+        <p>You are required to complete the mandatory fields below. You will then be directed to a secure PCI compliant payment
+          portal hosted by Barclaycard. This form is for Centres making credit/debit card payments for outstanding invoices. Once
+          you have submitted the completed form and your payment has been successfully received, a receipt will be available to
+          print.
+        </p>
+      </div>
+
+      <mat-grid-list cols="2">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Your name" value="">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Centre email address" value="">
+          </mat-form-field>
+          <!--<mat-form-field class="example-full-width">
+            <input matInput placeholder="Centre email address" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+            <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>-->
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="tel" placeholder="Centre telephone number" value="">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Centre number" value="">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Centre name" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Invoice reference" value="">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Currency</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+            {{currency.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput type="number" placeholder="Amount" value="">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Card type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let card of cards" [value]="card.value">
+            {{card.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Comment"></textarea>
+      </mat-form-field>
+
+      <p id="declarationText">Visa Credit Card and MasterCard Credit Card are subject to an additional 2% charge. Debit cards are not subject to any charges. Non UK Cardholders may be subject to a cross border charge from their Card Issuer. </p>
+
+      <mat-checkbox>I consent to the payment</mat-checkbox>
+
+      <button mat-button>Submit invoice</button>
+
+    </form>
+  </mat-tab>
+  <mat-tab label="Second">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      Second
+    </ng-template>
+    Content 2
+  </mat-tab>
+  <mat-tab label="Third">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      Third
+    </ng-template>
+    Content 3
+  </mat-tab>
+</mat-tab-group>
+
+<hr>
+
+<!--<dl>
+  <dt>Form fields: </dt>
+  <dd>{{registerForm.value | json}}</dd>
+  <dt>postSubmission: </dt>
+  <dd>{{response0 | json}}</dd>
+  <dt>getPreviewOrder: </dt>
+  <dd>{{response1 | json}}</dd>
+  <dt>postOrder: </dt>
+  <dd>{{response2 | json}}</dd>
+  <dt>getPayment: </dt>
+  <dd>{{response3}}</dd>
+</dl>-->
